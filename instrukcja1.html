@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl"> <!-- Changed language to Polish -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrukcja</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #baf3f9;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 2px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 600px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:disabled {
+            background-color: #ccc; /* Disabled button style */
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background-color: #f4f4f4;">
+    <div style="background-color: white; padding: 20px; border-radius: 2px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center; width: 600px; margin-bottom: 20px;">
+        <h2>Instrukcja</h2>
+        <p>
+            Memory to gra, w której celem jest zapamiętanie i dopasowanie par identycznych kart.
+        </p>
+        <p>
+            Na początku wszystkie karty są zakryte i rozmieszczone na ekranie w równych rzędach i kolumnach.
+        </p>
+        <p>
+            Kiedy odkryjesz kartę, staraj się zapamiętać, jaki obrazek się na niej znajduje, 
+            a następnie odkryj drugą kartę.
+        </p>
+        <p>
+            Jeśli oba obrazki są takie same, para jest udana i karty zostaną do siebie dopasowane. 
+            Jeśli odkryte karty różnią się, to zostaną ponownie zakryte.
+        </p>
+        <p>Sesja trwa 15 minut i obejmuje nieograniczoną liczbę rozgrywek.
+        Prosimy o wykonanie jak największej liczby rozgrywek w tym czasie.
+        </p>
+        <p>
+         Nie odświeżaj strony i nie stosuj przerw w trakcie sesji.
+        </p>
+        <p>
+            Powodzenia!
+        </p>
+    </div>
+
+    <div style="text-align: center;">
+        <button style="margin: 5px;" id="buttonA1" onclick="window.location.href='gramemoryA1.html';" aria-disabled="false">Graj A1</button>
+        <button style="margin: 5px;" id="buttonA2" onclick="window.location.href='gramemoryA2.html';" aria-disabled="true" disabled>Graj A2</button>
+        <button style="margin: 5px;" id="buttonA3" onclick="window.location.href='gramemoryA3.html';" aria-disabled="true" disabled>Graj A3</button>
+    </div>
+
+    <script src="buttonLogicA.js"></script>
+</body>
+</html>
