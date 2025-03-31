@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gra Memory</title>
+  <link href="grastylesB2.css" rel="stylesheet">
+  <script src="grascriptB2.js" async></script>
+</head>
+<body>
+  <h1 class="page-title">Gra memory</h1>
+  <div class="overlay-text visible" id="start-screen">
+    Kliknij, aby rozpocząć
+  </div>
+  <div id="victory-text" class="overlay-text">
+    Wygrana!
+    <span class="overlay-text-small">Click to Restart</span>
+  </div>
+  <div id="session-end-text" class="overlay-text">
+    Sesja zakończona!
+    <span class="overlay-text-small">Dziękujemy za grę!</span>
+  </div>
+  <div class="game-container">
+    <div class="game-info-container">
+      <div class="game-info">
+        Czas: <span id="timer">15:00</span> <!-- Timer element -->
+      </div>
+      <div class="game-info">
+        Obroty <span id="flips">0</span> <!-- Flip count element -->
+      </div>
+    </div>
+    <!-- Ensure each card has a unique data-id attribute -->
+    <div class="card" data-id="1">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/cat.png" alt="cat">
+      </div>
+    </div>
+    <div class="card" data-id="2">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/cat.png" alt="cat">
+      </div>
+    </div>
+    <div class="card" data-id="3">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/dog.png" alt="dog">
+      </div>
+    </div>
+    <div class="card" data-id="4">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/dog.png" alt="dog">
+      </div>
+    </div>
+    <div class="card" data-id="5">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/rat.png" alt="rat">
+      </div>
+    </div>
+    <div class="card" data-id="6">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/rat.png" alt="rat">
+      </div>
+    </div>
+    <div class="card" data-id="7">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/frog.png" alt="frog">
+      </div>
+    </div>
+    <div class="card" data-id="8">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/frog.png" alt="frog">
+      </div>
+    </div>
+    <div class="card" data-id="9">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/snake.png" alt="snake">
+      </div>
+    </div>
+    <div class="card" data-id="10">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/snake.png" alt="snake">
+      </div>
+    </div>
+    <div class="card" data-id="11">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/rooster.png" alt="rooster">
+      </div>
+    </div>
+    <div class="card" data-id="12">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/rooster.png" alt="rooster">
+      </div>
+    </div>
+    <div class="card" data-id="13">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/pig.png" alt="pig">
+      </div>
+    </div>
+    <div class="card" data-id="14">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/pig.png" alt="pig">
+      </div>
+    </div>
+    <div class="card" data-id="15">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/dove.png" alt="dove">
+      </div>
+    </div>
+    <div class="card" data-id="16">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/dove.png" alt="dove">
+      </div>
+    </div>
+    <div class="card" data-id="17">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/tiger.png" alt="tiger">
+      </div>
+    </div>
+    <div class="card" data-id="18">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/tiger.png" alt="tiger">
+      </div>
+    </div>
+    <div class="card" data-id="19">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/whale.png" alt="whale">
+      </div>
+    </div>
+    <div class="card" data-id="20">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/whale.png" alt="whale">
+      </div>
+    </div>
+    <div class="card" data-id="21">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/seal.png" alt="seal">
+      </div>
+    </div>
+    <div class="card" data-id="22">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/seal.png" alt="seal">
+      </div>
+    </div>
+    <div class="card" data-id="23">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/cricket.png" alt="cricket">
+      </div>
+    </div>
+    <div class="card" data-id="24">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/cricket.png" alt="cricket">
+      </div>
+    </div>
+    <div class="card" data-id="25">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/horse.png" alt="horse">
+      </div>
+    </div>
+    <div class="card" data-id="26">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/horse.png" alt="horse">
+      </div>
+    </div>
+    <div class="card" data-id="27">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/elephant.png" alt="elephant">
+      </div>
+    </div>
+    <div class="card" data-id="28">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/elephant.png" alt="elephant">
+      </div>
+    </div>
+    <div class="card" data-id="29">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/monkey.png" alt="monkey">
+      </div>
+    </div>
+    <div class="card" data-id="30">
+      <div class="card-back card-face">
+        <img class="spider" src="Assets/Images/CardBack.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/monkey.png" alt="monkey">
+      </div>
+  </div>
+  <div id="bug-report-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Zgłoś błąd</h2>
+      <textarea id="bug-report-text" placeholder="Jeśli podczas gry pojawił się błąd, opisz go."></textarea>
+      <button id="submit-bug-report">Wyślij</button>
+      <button id="close-bug-report">Zamknij</button>
+    </div>
+</div>
+</body>
+</html>

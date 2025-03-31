@@ -1,0 +1,220 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("Assets/Fonts/Roboto-Black.ttf") format("ttf"), url("Assets/Fonts/Roboto-Black.woff") format("woff"), url("Assets/Fonts/Roboto-Black.woff2") format("woff2")
+  }
+  
+  @font-face {
+    font-family: "Lunacy";
+    src: url("Assets/Fonts/Roboto-Black.ttf") format("ttf"), url("Assets/Fonts/Roboto-BlackItalic.woff2") format("woff2"), url("Assets/Fonts/Roboto-BlackItalic.woff") format("woff")
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    min-height: 100vh;
+  }
+  
+  body {
+    margin: 0;
+    background: #35b1ff;
+  }
+  
+  .page-title {
+    color: #ffda46;
+    font-family: Roboto , serif;
+    text-align: center;
+    font-size: 3em;
+  }
+  
+  .game-info-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .game-info {
+    font-family: Roboto , serif;
+    color: #ffde69;
+    font-size: 2em;
+  }
+  
+  .game-container {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-gap: 10px;
+    margin: 50px;
+    justify-content: center;
+    perspective: 500px;
+  }
+  
+  .card {
+    position: relative;
+    height: 120px;
+    width: 120px;
+  }
+  
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    border-width: 1px;
+    border-style: solid;
+    transition: transform 500ms ease-in-out;
+  }
+  
+  /* Flipping the card */
+  .card.visible .card-back {
+    transform: rotateY(-180deg);
+  }
+  
+  .card.visible .card-front {
+    transform: rotateY(0);
+  }
+  
+  /* Animation for matched cards */
+  .card.matched .card-value {
+    animation: dance 1s linear infinite 500ms;
+  }
+  
+  /* Overlay text for game messages */
+  .overlay-text {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: #ffffff;
+    font-family: Roboto, serif;
+  }
+  
+  .overlay-text-small {
+    font-size: .3em;
+  }
+  
+  .overlay-text.visible {
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 500ms forwards;
+  }
+  
+  @keyframes overlay-grow {
+    from {
+      background-color: rgba(0, 0, 0, 0);
+      font-size: 0;
+    }
+    to {
+      background-color: rgba(0, 0, 0, .8);
+      font-size: 3em;
+    }
+  }
+  
+  @keyframes dance {
+    0%, 100%  {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(-2deg);
+    }
+    75% {
+      transform: rotate(2deg);
+    }
+  }
+  
+  .card-back {
+    background-color: black;
+    border-color: #ffffff;
+  }
+  
+  .card-front {
+    background-color: #ffffff;
+    border-color: #333;
+    transform: rotateY(180deg);
+  }
+  
+  .card-value {
+    transition: transform 100ms ease-in-out;
+    transform: scale(.9);
+  }
+  
+  .card-front:hover .card-value {
+    transform: scale(1);
+  }
+  
+  @media (max-width: 600px) {
+    .game-container {
+      grid-template-columns: repeat(2, auto);
+    }
+  
+    .game-info-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+}
+
+#bug-report-text {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+#submit-bug-report, #close-bug-report {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submit-bug-report {
+    background-color: #28a745;
+    color: white;
+}
+
+#close-bug-report {
+    background-color: #dc3545;
+    color: white;
+}
